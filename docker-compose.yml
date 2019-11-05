@@ -1,0 +1,18 @@
+version: "3.5"
+
+services:
+  server:
+    container_name: api-test01
+    build:
+      context: ./api-test01
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080" #8080을 8080으로 맵핑
+    environment:
+      - NODE_ENV=dev
+    networks:
+      - backend
+
+networks:
+  backend:
+    external: true
