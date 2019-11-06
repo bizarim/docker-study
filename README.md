@@ -7,3 +7,6 @@ $docker-compose down
 $docker-compose build
 $docker-compose up
 ```
+
+# todo
+redis, mysql, api-test03 추가 예정
