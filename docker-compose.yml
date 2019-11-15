@@ -29,24 +29,25 @@ services:
     networks:
       - backend
 
-  gateway:
-      container_name: api-test02
-      build:
-        context: ./api-test02
-        dockerfile: Dockerfile
-      ports:
-        - "8080:80" #8080 8080 맵핑
-      environment:
-        - NODE_ENV=dev
-      volumes:
-        - api-test02:/data/api-test02
-      networks:
-        - backend
+  # gateway:
+  #     container_name: api-test02
+  #     build:
+  #       context: ./api-test02
+  #       dockerfile: Dockerfile
+  #     ports:
+  #       - "8080:80" #8080 8080 맵핑
+  #     environment:
+  #       - NODE_ENV=dev
+  #     volumes:
+  #       - api-test02:/data/api-test02
+  #     networks:
+  #       - backend
 
 networks:
   backend:
     external: true
 
 volumes:
+  mysql:
   api-test01:
-  api-test02:
+  # api-test02:
